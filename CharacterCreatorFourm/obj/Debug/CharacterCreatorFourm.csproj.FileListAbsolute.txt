@@ -9,3 +9,15 @@ C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CharacterCreatorFourm\bin
 C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CharacterCreatorFourm\bin\Debug\CharacterCreatorFourm.pdb
 C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.exe
 C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.pdb
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.csprojAssemblyReference.cache
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.MDIParent1.resources
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.Properties.Resources.resources
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.SpriteForm.resources
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.SpriteSheetForm.resources
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.csproj.GenerateResource.cache
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.csproj.CoreCompileInputs.cache
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.exe
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\obj\Debug\CharacterCreatorFourm.pdb
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\bin\Debug\CharacterCreatorFourm.exe.config
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\bin\Debug\CharacterCreatorFourm.exe
+C:\Users\s171841\Desktop\IntroC#\CharacterCreatorFourm\CSharp\trunk\CharacterCreatorFourm\bin\Debug\CharacterCreatorFourm.pdb

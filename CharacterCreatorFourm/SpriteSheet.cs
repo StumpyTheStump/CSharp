@@ -5,11 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace CharacterCreator
+namespace CharacterCreatorFourm
 {
-    class SpriteSheet
+    public class SpriteSheet
     {
-        public string path;
+        public string Path { get; private set; }
+
+        public int GridWidth { get; set; } = 16;
+        public int GridHeight { get; set; } = 16;
+        public int Spacing { get; set; } = 1;
+
+        public string Filename
+        {
+            get { return Path.Substring(Path.LastIndexOf('\\')); }
+        }
 
         public Image Image { get; private set; } = null;
 
@@ -25,18 +34,18 @@ namespace CharacterCreator
 
         public SpriteSheet(string path)
         {
-            this.path = path;
+            Path = path;
             Load();
         }
 
         public void Load()
         {
-            Image = Image.FromFile(path);
+            Image = Image.FromFile(Path);
         }
 
         public override string ToString()
         {
-            return base.ToString() + ": " + path.ToString();
+            return Filename;
         }
     }
 }

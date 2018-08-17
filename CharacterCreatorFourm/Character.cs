@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace CharacterCreator
+namespace CharacterCreatorFourm
 {
     class Character
     {
@@ -23,7 +23,7 @@ namespace CharacterCreator
 
         public override string ToString()
         {
-            return base.ToString() + "\n\tpath: \t" + spriteSheet.path + "\n\tname: \t" + name.ToString() + "\n\ttile coordinates: \t" + tileCoordinates.ToString();
+            return base.ToString() + "\n\tpath: \t" + spriteSheet.Path + "\n\tname: \t" + name.ToString() + "\n\ttile coordinates: \t" + tileCoordinates.ToString();
         }
     }
 }

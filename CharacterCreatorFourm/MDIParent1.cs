@@ -111,5 +111,13 @@ namespace CharacterCreatorFourm
             childForm.Text = "Sprite Sheet " + childFormNumber++;
             childForm.Show();
         }
+
+        private void newSprite_Click(object sender, EventArgs e)
+        {
+            Form childForm = new SpriteForm();
+            childForm.MdiParent = this;
+            childForm.Text = "Sprite " + childFormNumber++;
+            childForm.Show();
+        }
     }
 }

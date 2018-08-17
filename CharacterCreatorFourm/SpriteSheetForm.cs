@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CharacterCreator;
 
 namespace CharacterCreatorFourm
 {
     public partial class SpriteSheetForm : Form
     {
 
-        SpriteSheet spritesheet = null;
+        public SpriteSheet SpriteSheet { get; private set; }
         Bitmap drawArea;
+
+        public Point CurrentTile { get; private set; } = new Point();
+
+        public string Filename
+        {
+            get { return (SpriteSheet != null) ? SpriteSheet.Filename : string.Empty; }
+        }
 
         int gridWidth = 16;
         int gridHeight = 16;
@@ -36,7 +42,7 @@ namespace CharacterCreatorFourm
             {
                 if(dlg.CheckFileExists == true)
                 {
-                    spritesheet = new SpriteSheet(dlg.FileName);
+                    SpriteSheet = new SpriteSheet(dlg.FileName);
                     drawGrid();
                 }
             }
@@ -51,24 +57,32 @@ namespace CharacterCreatorFourm
 
             g.Clear(Color.White);
 
-            if (spritesheet != null)
+            if (SpriteSheet == null)
             {
-                g.DrawImage(spritesheet.Image, 0, 0);
+                return;
             }
+
+            g.DrawImage(SpriteSheet.Image, 0, 0);
 
             Pen pen = new Pen(Brushes.Black);
 
             int height = pictureBox1.Height;
             int width = pictureBox1.Width;
-            for (int y = 0; y < height; y += gridHeight + spacing)
+            for (int y = 0; y < height; y += SpriteSheet.GridHeight + SpriteSheet.Spacing)
             {
                 g.DrawLine(pen, 0, y, width, y);
             }
 
-            for (int x = 0; x < width; x += gridWidth + spacing)
+            for (int x = 0; x < width; x += SpriteSheet.GridWidth + SpriteSheet.Spacing)
             {
                 g.DrawLine(pen, x, 0, x, height);
             }
+
+            Pen highlight = new Pen(Brushes.Red);
+            g.DrawRectangle(highlight, CurrentTile.X * (SpriteSheet.GridWidth + SpriteSheet.Spacing), 
+                                       CurrentTile.Y * (SpriteSheet.GridHeight + SpriteSheet.Spacing),
+                                       SpriteSheet.GridWidth + SpriteSheet.Spacing, 
+                                       SpriteSheet.GridHeight + SpriteSheet.Spacing);
 
             g.Dispose();
 
@@ -77,40 +91,59 @@ namespace CharacterCreatorFourm
 
         private void textBoxWidth_TextChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(textBoxWidth.Text, out gridWidth) == true)
+            int width;
+            if (int.TryParse(textBoxWidth.Text, out width) == true)
             {
+                SpriteSheet.GridHeight = width;
                 drawGrid();
             }
 
-            textBoxWidth.Text = gridWidth.ToString();
+            textBoxWidth.Text = SpriteSheet.GridWidth.ToString();
 
         }
 
         private void textBoxHeight_TextChanged(object sender, EventArgs e)
         {
-            if(int.TryParse(textBoxHeight.Text, out gridHeight) == true)
+            int height;
+            if(int.TryParse(textBoxHeight.Text, out height) == true)
             {
+                SpriteSheet.GridHeight = height;
                 drawGrid();
             }
 
-            textBoxHeight.Text = gridHeight.ToString();
+            textBoxHeight.Text = SpriteSheet.GridHeight.ToString();
 
         }
 
         private void textBoxSpacing_TextChanged(object sender, EventArgs e)
         {
+            int spacing;
             if(int.TryParse(textBoxSpacing.Text, out spacing) == true)
             {
+                SpriteSheet.Spacing = spacing;
                 drawGrid();
             }
 
-            textBoxSpacing.Text = spacing.ToString();
+            textBoxSpacing.Text = SpriteSheet.Spacing.ToString();
         }
 
         
         private void SpriteSheetForm_Shown(object sender, EventArgs e)
         {
             drawGrid();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (SpriteSheet == null)
+                return;
+
+            if(e.GetType() == typeof(MouseEventArgs))
+            {
+                MouseEventArgs mouse = e as MouseEventArgs;
+                CurrentTile = new Point( mouse.X / (SpriteSheet.GridWidth + SpriteSheet.Spacing), mouse.Y / (SpriteSheet.GridHeight + SpriteSheet.Spacing));
+                drawGrid();
+            }
         }
     }
 }
